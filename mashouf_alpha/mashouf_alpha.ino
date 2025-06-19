@@ -17,7 +17,7 @@ struct BBMashouf {
   bool b4Flag:1;
   int EoP:3;
   int CRC:4;
-}
+};
 
 struct MASHOUF {
   int address;
@@ -26,14 +26,14 @@ struct MASHOUF {
   CTRL_CODE ctrl;
   unsigned char payload;
   int crc;
-}
+};
 
 class SWOMP {
   public:
-  static MASHOUF get_mash()
+  static MASHOUF get_mash();
 
 
-}
+};
 
 void setup() {
   // put your setup code here, to run once:

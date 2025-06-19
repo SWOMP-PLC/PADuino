@@ -8,20 +8,20 @@ struct BBMashouf {
  public:
   bool b1Flag : 1;
   int SoP : 3;
-  int SEQ_Num : 3;
-  bool DEST : 1;
+  int seq_num : 3;
+  bool dest : 1;
 
   bool b2Flag : 1;
-  int CTRL_Sig : 2;
+  int ctrl_sig : 2;
   int P0 : 1;
-  int Address : 4;
+  int addr : 4;
 
   bool b3Flag : 1;
-  int Payload_17 : 7;
+  int payload_17 : 7;
 
   bool b4Flag : 1;
   int EoP : 3;
-  int CRC : 4;
+  int crc_check : 4;
 };
 
 /*
@@ -43,8 +43,10 @@ struct MASHOUF {
 
 class MASHIO {
     public:
-    
-}
+    static BBMashouf mashOut(MASHOUF tmash);
+    static BBMashouf packBBMash();
+    static MASHOUF mashIn(BBMashouf imash);
+};
 
 class PACKET_FIFO {
  public:
